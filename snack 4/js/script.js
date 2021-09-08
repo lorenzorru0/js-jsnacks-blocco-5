@@ -10,14 +10,18 @@ function mergeArray(array1, array2) {
     let i1 = 0;
     let i2 = 0;
 
-    for (let i = 0; i < (array1.length + array2.length); i++) {
-        if (i % 2 == 1) {
-            array.push(array1[i1]);
-            i1++;
-        } else {
-            array.push(array2[i2]);
-            i2++;
+    if (array1.length == array2.length) {
+        for (let i = 0; i < (array1.length + array2.length); i++) {
+            if (i % 2 == 1) {
+                array.push(array1[i1]);
+                i1++;
+            } else {
+                array.push(array2[i2]);
+                i2++;
+            }
         }
+    } else {
+        return null;
     }
     return array;
 }
@@ -25,10 +29,13 @@ function mergeArray(array1, array2) {
 /**
  * Main code
  */
-let array1 = [1, 2, 3, 4];
+let array1 = [1, 2, 3, 4, 5];
 let array2 = ['A', 'B', 'C', 'D'];
 
 let array = mergeArray(array1, array2);
 
-
-console.log(array);
+if(array == null) {
+    console.log(`I due array da fondere non hanno la stessa dimensione`)
+} else {
+    console.log(array);
+}
