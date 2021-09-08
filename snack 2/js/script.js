@@ -5,15 +5,13 @@
 /** 
 * Functions
 */
-function stampaArray(array, peso) {
+function stampaArray(array) {
     for (let i = 0; i < array.length; i++) {
-        peso += array[i].peso;
         document.getElementById(`zucchine`).innerHTML += `Varietà: ${array[i].varietà} <br>
                                                     Peso: ${array[i].peso} <br>
                                                     Lunghezza: ${array[i].lunghezza} <br>
                                                     `
     }
-    return peso;
 }
 
 /**
@@ -80,17 +78,19 @@ let div = document.getElementById(`zucchine`);
 for(let i = 0; i < zucchineVarie.length; i++) {
     if(zucchineVarie[i].lunghezza <= 15) {
         zucchinePiccole.push(zucchineVarie[i]);
+        pesoPiccole += zucchineVarie[i].peso;
     } else {
         zucchineGrandi.push(zucchineVarie[i]);
+        pesoGrandi += zucchineVarie[i].peso;
     }
 }
 
 div.innerHTML += `<br>Zucchine piccole: <br>`;
-pesoPiccole = stampaArray(zucchinePiccole, pesoPiccole);
+stampaArray(zucchinePiccole);
 div.innerHTML += `Peso zucchine piccole: ${pesoPiccole}gr <br>`
 
 div.innerHTML += `<br>Zucchine grandi: <br>`;
-pesoGrandi = stampaArray(zucchineGrandi, pesoGrandi);
+stampaArray(zucchineGrandi);
 div.innerHTML += `Peso zucchine grandi: ${pesoGrandi}gr`
 
 console.log(zucchinePiccole);
