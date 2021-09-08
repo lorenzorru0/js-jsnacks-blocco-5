@@ -22,11 +22,16 @@ let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17, 18, 
 for(let i = 0; i < array.length; i++) {
     document.getElementById(`stampaArray`).innerHTML += `${array[i]}  `
 }
+document.getElementById(`a`).value = '';
+document.getElementById(`b`).value = '';
 let btnTaglia = document.getElementById(`taglia`);
 btnTaglia.addEventListener(`click`,
     () => {
-        let a = document.getElementById(`a`).value;
-        let b = document.getElementById(`b`).value;
+        let a = parseInt(document.getElementById(`a`).value);
+        let b = parseInt(document.getElementById(`b`).value);
+        if(isNaN(a) || isNaN(b) || b <= a) {
+            alert(`Inserisci dei dati corretti!!`)
+        }
         let arrayTagliato = functionArray(array, a, b);
         for (let i = 0; i < arrayTagliato.length; i++) {
             document.getElementById(`arrayTagliato`).innerHTML += `${arrayTagliato[i]}  `
