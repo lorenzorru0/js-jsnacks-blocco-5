@@ -62,6 +62,6 @@ for (let i = 0; i < zucchineVarie.length; i++) {
                                                     Lunghezza: ${zucchineVarie[i].lunghezza} <br>
                                                     `
 }
-document.getElementById(`zucchine`).innerHTML += `Peso totale: ${pesoTotale}`
+document.getElementById(`zucchine`).innerHTML += `Peso totale: ${pesoTotale}gr`
 console.log(zucchineVarie);
 console.log(pesoTotale);
