@@ -30,7 +30,9 @@ btnTaglia.addEventListener(`click`,
         let a = parseInt(document.getElementById(`a`).value);
         let b = parseInt(document.getElementById(`b`).value);
         if(isNaN(a) || isNaN(b) || b <= a) {
-            alert(`Inserisci dei dati corretti!!`)
+            document.getElementById(`arrayTagliato`).innerHTML = `Array tagliato: `;
+            alert(`Inserisci dei dati corretti!!`);
+            return null;
         }
         let arrayTagliato = functionArray(array, a, b);
         for (let i = 0; i < arrayTagliato.length; i++) {
