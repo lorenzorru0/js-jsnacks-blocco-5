@@ -1,6 +1,24 @@
 // Crea 10 oggetti che rappresentano una zucchina.
 // Dividi in due array separati le zucchine che misurano meno o più di 15cm.
 // Infine stampa separatamente quanto pesano i due gruppi di zucchine.
+
+/** 
+* Functions
+*/
+function stampaArray(array, peso) {
+    for (let i = 0; i < array.length; i++) {
+        peso += array[i].peso;
+        document.getElementById(`zucchine`).innerHTML += `Varietà: ${array[i].varietà} <br>
+                                                    Peso: ${array[i].peso} <br>
+                                                    Lunghezza: ${array[i].lunghezza} <br>
+                                                    `
+    }
+    return peso;
+}
+
+/**
+*Main code
+*/
 const zucchineVarie = [
     {
         'varietà': "chiara",
@@ -67,23 +85,11 @@ for(let i = 0; i < zucchineVarie.length; i++) {
 }
 
 document.getElementById(`zucchine`).innerHTML += `<br>Zucchine piccole: <br>`;
-for (let i = 0; i < zucchinePiccole.length; i++) {
-    pesoPiccole += zucchinePiccole[i].peso;
-    document.getElementById(`zucchine`).innerHTML += `Varietà: ${zucchinePiccole[i].varietà} <br>
-                                                    Peso: ${zucchinePiccole[i].peso} <br>
-                                                    Lunghezza: ${zucchinePiccole[i].lunghezza} <br>
-                                                    `
-}
+pesoPiccole = stampaArray(zucchinePiccole, pesoPiccole);
 document.getElementById(`zucchine`).innerHTML += `Peso zucchine piccole: ${pesoPiccole}gr <br>`
 
 document.getElementById(`zucchine`).innerHTML += `<br>Zucchine grandi: <br>`;
-for (let i = 0; i < zucchineGrandi.length; i++) {
-    pesoGrandi += zucchineGrandi[i].peso;
-    document.getElementById(`zucchine`).innerHTML += `Varietà: ${zucchineGrandi[i].varietà} <br>
-                                                    Peso: ${zucchineGrandi[i].peso} <br>
-                                                    Lunghezza: ${zucchineGrandi[i].lunghezza} <br>
-                                                    `
-}
+pesoGrandi = stampaArray(zucchineGrandi, pesoGrandi);
 document.getElementById(`zucchine`).innerHTML += `Peso zucchine grandi: ${pesoGrandi}gr`
 
 console.log(zucchinePiccole);
