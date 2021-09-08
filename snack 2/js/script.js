@@ -75,6 +75,7 @@ const zucchinePiccole = [];
 const zucchineGrandi = [];
 let pesoPiccole = 0; 
 let pesoGrandi = 0;
+let div = document.getElementById(`zucchine`);
 
 for(let i = 0; i < zucchineVarie.length; i++) {
     if(zucchineVarie[i].lunghezza <= 15) {
@@ -84,13 +85,13 @@ for(let i = 0; i < zucchineVarie.length; i++) {
     }
 }
 
-document.getElementById(`zucchine`).innerHTML += `<br>Zucchine piccole: <br>`;
+div.innerHTML += `<br>Zucchine piccole: <br>`;
 pesoPiccole = stampaArray(zucchinePiccole, pesoPiccole);
-document.getElementById(`zucchine`).innerHTML += `Peso zucchine piccole: ${pesoPiccole}gr <br>`
+div.innerHTML += `Peso zucchine piccole: ${pesoPiccole}gr <br>`
 
-document.getElementById(`zucchine`).innerHTML += `<br>Zucchine grandi: <br>`;
+div.innerHTML += `<br>Zucchine grandi: <br>`;
 pesoGrandi = stampaArray(zucchineGrandi, pesoGrandi);
-document.getElementById(`zucchine`).innerHTML += `Peso zucchine grandi: ${pesoGrandi}gr`
+div.innerHTML += `Peso zucchine grandi: ${pesoGrandi}gr`
 
 console.log(zucchinePiccole);
 console.log(zucchineGrandi);
